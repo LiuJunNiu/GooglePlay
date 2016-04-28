@@ -1,21 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activity.MainActivity">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <android.support.v7.widget.Toolbar
-        android:id="@+id/tb_main_activity"
+        android:id="@+id/tb_base_activity_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
     </android.support.v7.widget.Toolbar>
     <FrameLayout
-        android:id="@+id/fl_main_activity"
+        android:id="@+id/fl_base_activity_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </FrameLayout>
+
 </LinearLayout>

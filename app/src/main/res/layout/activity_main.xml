@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical">
 
-   <RelativeLayout
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       android:background="@android:color/white"/>
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="start"
-        android:background="@android:color/holo_orange_light"/>
-</android.support.v4.widget.DrawerLayout>
+    <include layout="@layout/toolbar_normal" />
+
+    <include layout="@layout/drawerlayout_normal" />
+
+</LinearLayout>

@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         mToolbar = (Toolbar) findViewById(R.id.tb_normal);
+        assert mToolbar != null;
         mToolbar.setTitle("GooglePlay");
         mDrawerLayout = (DrawerLayout) findViewById(R.id.dl_main);
 

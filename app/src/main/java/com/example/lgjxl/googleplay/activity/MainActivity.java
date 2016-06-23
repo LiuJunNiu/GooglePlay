@@ -2,6 +2,7 @@ package com.example.lgjxl.googleplay.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -10,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 
 import com.example.lgjxl.googleplay.R;
-import com.example.lgjxl.googleplay.adapter.MainViewPagerAdapter;
+import com.example.lgjxl.googleplay.adapter.MainFragmentPagerAdapter;
 import com.example.lgjxl.googleplay.utils.UIUtils;
 
 
@@ -21,8 +22,9 @@ public class MainActivity extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
-    private MainViewPagerAdapter mMainViewPagerAdapter;
+    private MainFragmentPagerAdapter mMainFragmentPagerAdapter;
     private String[] mTitles;
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         for (int i=0;i<mTitles.length;i++) {
             Log.e("TAG", "initData: "+mTitles[i] );
         }
-        mMainViewPagerAdapter = new MainViewPagerAdapter(this,mTitles);
-        mViewPager.setAdapter(mMainViewPagerAdapter);
+        mMainFragmentPagerAdapter = new MainFragmentPagerAdapter(fragmentManager);
+        mViewPager.setAdapter(mMainFragmentPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mTabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        fragmentManager = getSupportFragmentManager();
         mToolbar = (Toolbar) findViewById(R.id.tb_normal);
         setSupportActionBar(mToolbar);
         mToolbar.setTitle(R.string.app_title);

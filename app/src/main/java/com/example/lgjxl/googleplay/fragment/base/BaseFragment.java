@@ -1,13 +1,14 @@
 package com.example.lgjxl.googleplay.fragment.base;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.lgjxl.googleplay.view.LoadingPager;
 
 /**
  * @ProjectName:GooglePlay
@@ -22,7 +23,7 @@ import android.view.ViewGroup;
  */
 public abstract class BaseFragment extends Fragment {
     protected Activity mActivity;//加载Fragment的Activity
-    protected View rootView;//Fragment中的根视图
+//    protected View rootView;//Fragment中的根视图
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,15 +33,18 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        rootView = initView();
-        container.addView(rootView);
-        return rootView;
-    }
+        //视图的共同点：
+        //无网络；加载中；空页面
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        initData();
+        //不同点：
+        //成功后的界面
+
+        //将共同点抽取出来
+
+        //view应该包含加载中，空页面，错误界面，成功
+        LoadingPager loadingPager = new LoadingPager(mActivity);
+
+        return loadingPager;
     }
 
     //由子类决定要不要实现

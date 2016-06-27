@@ -12,6 +12,8 @@ import android.util.Log;
 
 import com.example.lgjxl.googleplay.R;
 import com.example.lgjxl.googleplay.adapter.MainFragmentPagerAdapter;
+import com.example.lgjxl.googleplay.factory.FragmentFactory;
+import com.example.lgjxl.googleplay.fragment.base.BaseFragment;
 import com.example.lgjxl.googleplay.utils.UIUtils;
 
 
@@ -50,7 +52,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                Log.e("TAG", "onPageSelected:--------- "+position );
+                //当选中的时候在加载数据
+                BaseFragment fragment = FragmentFactory.getFragment(position);
+                fragment.loadData();
+                Log.e("TAG", "onPageSelected: --------"+"执行了加载数据" );
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
 
     }
 

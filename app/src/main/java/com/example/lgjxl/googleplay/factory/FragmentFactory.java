@@ -1,9 +1,9 @@
 package com.example.lgjxl.googleplay.factory;
 
-import android.support.v4.app.Fragment;
 import android.support.v4.util.SparseArrayCompat;
 
 import com.example.lgjxl.googleplay.fragment.HomeFragment;
+import com.example.lgjxl.googleplay.fragment.base.BaseFragment;
 
 /**
  * Created by niu on 2016/6/21.
@@ -14,9 +14,9 @@ public class FragmentFactory {
 
     //    private static Map<Integer, Fragment> mCaches = new HashMap<Integer, Fragment>();
     //是一个类似于map集合，性能提升至少50%，只是用于integer，object
-    private static SparseArrayCompat<Fragment> mCaches = new SparseArrayCompat<>();
+    private static SparseArrayCompat<BaseFragment> mCaches = new SparseArrayCompat<>();
 
-    public static Fragment getFragment(int position) {
+    public static BaseFragment getFragment(int position) {
 
 //        <item>首页</item>
 //        <item>应用</item>
@@ -26,7 +26,7 @@ public class FragmentFactory {
 //        <item>分类</item>
 //        <item>排行</item>
 
-        Fragment fragment = mCaches.get(position);
+        BaseFragment fragment = mCaches.get(position);
         if (fragment != null) {
             return fragment;
         }
@@ -54,6 +54,9 @@ public class FragmentFactory {
                 fragment = new HomeFragment();
                 break;
         }
+
+        mCaches.put(position, fragment);
+
         return fragment;
     }
 }

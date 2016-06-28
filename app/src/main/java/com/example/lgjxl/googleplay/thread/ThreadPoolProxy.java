@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Created by niu on 2016/6/27.
+ * 线程池管理类
  */
 
 public class ThreadPoolProxy {

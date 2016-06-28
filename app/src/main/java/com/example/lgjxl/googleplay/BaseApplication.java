@@ -10,6 +10,7 @@ import android.os.Looper;
  */
 
 public class BaseApplication extends Application {
+
     private static Context context;
     private static Thread mMainThread;
     private static long mMainThreadId;
@@ -35,6 +36,8 @@ public class BaseApplication extends Application {
     public static Context getContext(){
         return context;
     }
+
+
     @Override
     public void onCreate() {
         super.onCreate();

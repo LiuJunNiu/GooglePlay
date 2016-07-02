@@ -4,6 +4,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.lgjxl.googleplay.R;
+import com.example.lgjxl.googleplay.holder.base.BaseHolder;
 import com.example.lgjxl.googleplay.utils.UIUtils;
 
 /**
@@ -12,7 +13,6 @@ import com.example.lgjxl.googleplay.utils.UIUtils;
  */
 
 public class AppItemHolder extends BaseHolder<String> {
-
 
     private TextView tv1;
     private TextView tv2;

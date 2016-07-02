@@ -9,7 +9,6 @@ import com.example.lgjxl.googleplay.adapter.HomeAdapter;
 import com.example.lgjxl.googleplay.fragment.base.BaseFragment;
 import com.example.lgjxl.googleplay.view.LoadingPager;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,8 +17,6 @@ import java.util.List;
  */
 
 public class HomeFragment extends BaseFragment {
-
-
     private List<String> mDatas;
 
     @Override
@@ -56,25 +53,9 @@ public class HomeFragment extends BaseFragment {
     @Override
     protected LoadingPager.LoadedResult onLoadingData() {
 
-        //模拟随即数
-//        LoadingPager.LoadedResult[] results = new LoadingPager.LoadedResult[]{LoadingPager.LoadedResult.EMPTY,
-//                LoadingPager.LoadedResult.ERROR, LoadingPager.LoadedResult.SUCCESS};
-//        Random rdm = new Random();
-//        try {
-//            Thread.sleep(1000);
-//
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        LoadingPager.LoadedResult result = results[rdm.nextInt(results.length)];
-////        Log.e("TAG", "onLoadingData: -------"+result);
-//        return result;
+        //去网络获取这是数据
 
-        mDatas = new ArrayList<>();
 
-        for (int i=0;i<50;i++) {
-            mDatas.add("随即数" + i);
-        }
 
         return LoadingPager.LoadedResult.SUCCESS;
     }

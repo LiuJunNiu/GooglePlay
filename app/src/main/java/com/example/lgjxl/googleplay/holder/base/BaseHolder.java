@@ -1,4 +1,4 @@
-package com.example.lgjxl.googleplay.holder;
+package com.example.lgjxl.googleplay.holder.base;
 
 import android.view.View;
 
@@ -19,13 +19,6 @@ public abstract class BaseHolder<T> {
     }
 
     /**
-     * 实现view布局
-     * @return View
-     */
-    protected abstract View initView();
-
-
-    /**
      * 获取根布局
      * @return View
      */
@@ -41,5 +34,15 @@ public abstract class BaseHolder<T> {
 
     }
 
+    /**
+     * 实现view布局
+     * @return View
+     */
+    protected abstract View initView();
+
+    /**
+     * 根据传入的数据设置界面
+     * @param data
+     */
     protected abstract void refreshUI(T data);
 }

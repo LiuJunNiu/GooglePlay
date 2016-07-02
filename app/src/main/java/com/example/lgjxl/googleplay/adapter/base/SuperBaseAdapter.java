@@ -1,10 +1,10 @@
-package com.example.lgjxl.googleplay.adapter;
+package com.example.lgjxl.googleplay.adapter.base;
 
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.example.lgjxl.googleplay.holder.BaseHolder;
+import com.example.lgjxl.googleplay.holder.base.BaseHolder;
 
 import java.util.List;
 

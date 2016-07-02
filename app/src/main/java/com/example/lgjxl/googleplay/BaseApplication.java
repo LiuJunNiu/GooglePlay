@@ -53,6 +53,5 @@ public class BaseApplication extends Application {
         this.mMainThreadId = mMainThread.getId();
         this.mMainHandler = new Handler();
         this.mMainLooper = getMainLooper();
-        this.requestQueue = NoHttp.newRequestQueue();
-    }
+        this.requestQueue = NoHttp.newRequestQueue(); }
 }
